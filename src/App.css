@@ -1,0 +1,47 @@
+:root{
+  --destaque:#C9AFC6;
+  --fundo-inverso:#4A2045;
+  --fundo:#330D2F;
+  --text:white;
+  --destaque-inverso:#330D2F;
+}
+
+
+#container{
+  background-color: var(--fundo);
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto auto auto;
+    gap: 20px;
+    width: 100vw;
+    height: 100vh;
+    align-items: center;
+    justify-items: center;
+    
+}
+
+.container{
+  width: 300px;
+  height: 500px;
+  background-color: rgba(0, 0, 0, 0.747);
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-content: center;
+  grid-column: 2/3;
+  grid-row: 2/3;
+}
+
+.login{
+  flex-basis: 2em;
+}
+
+.login label{
+  padding-bottom:0px;
+}
+
+.login input{
+  background-color: white;
+  width: 260px;
+  padding: 10px;
+}
