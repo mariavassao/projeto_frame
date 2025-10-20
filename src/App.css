@@ -1,14 +1,15 @@
 :root{
-  --destaque:#C9AFC6;
-  --fundo-inverso:#4A2045;
-  --fundo:#330D2F;
-  --text:white;
-  --destaque-inverso:#330D2F;
+  --destaque:#23A7CF;
+  --fundo-inverso:#354A50;
+  --fundo:#378BA5;
+  --text:#FFFFFF;
+  --destaque-inverso:#3D6C7A;
 }
 
 
-#container{
-  background-color: var(--fundo);
+#container-pai{
+    background-color: rgb(221, 218, 218);
+    color: var(--destaque);
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: auto auto auto;
@@ -20,28 +21,47 @@
     
 }
 
-.container{
+.container-filho{
+  box-shadow: 0px 0px 3px 1px  rgba(0, 0, 0, 0.459);
   width: 300px;
   height: 500px;
-  background-color: rgba(0, 0, 0, 0.747);
+  border-radius: 5px;
+  background-color: #FFFFFF;
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
   align-content: center;
+
   grid-column: 2/3;
   grid-row: 2/3;
 }
 
-.login{
-  flex-basis: 2em;
+.campo{
+    width: 270px;
+    padding: 10px;
+    margin-top:10px;
+  }
+
+input{
+  display: block;
+  width: 100%;
+  padding: 8px;
+  
 }
 
-.login label{
-  padding-bottom:0px;
+button{
+  background-color: var(--destaque);
+  color: var(--text);
+  width: 93%;
+  margin: 10px;
+  padding: 8px;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
-.login input{
-  background-color: white;
-  width: 260px;
-  padding: 10px;
+button:hover{
+  background-color: var(--destaque-inverso);
+  color: var(--destaque);
+  font-size: bold;
+  transition-duration: .5s;
 }

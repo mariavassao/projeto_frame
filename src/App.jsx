@@ -8,7 +8,7 @@ import { Login } from './pages/Login'
 function App() {
 
   return (
-    <div id='container'>
+    <div id='container-pai'>
        <Login/>
     </div>
    
