@@ -51,10 +51,55 @@ export function Home(){
 
             {showForm && (
                 <div className="formulario">
-                    
+                    {/*value={titulo } mostra o valor atual do estado, onChage atualiza o estado quando o usuario digita;*/}
+                    <input 
+                        value={titulo}
+                        onChange={e=> setTtitulo(e.target.value)}
+                        placeholder="Titulo"
+                    />
+
+                    <input 
+                        value={materia}
+                        onChange={e=> setMateria(e.target.value)}
+                        placeholder="materia"
+                    />
+
+                    <input 
+                        type="date"
+                        value={incio}
+                        onChange={e=> setInicio(e.target.value)}
+                        placeholder="Inicio"
+                    />
+
+                    <input 
+                        type="date"
+                        value={termino}
+                        onChange={e=> setTermino(e.target.value)}
+                        placeholder="TErmino"
+                    />
+
+                    <textarea>
+                        value={descricao}
+                        onChange={e=> setDescricao(e.target.value)}
+                        placeholder="Descricao"
+                    </textarea>
+
+                    {/*container q vai exibir os itens do cronograma, a seguir vai percorrer o array e renderizar cada item*/}
+                    <div className="container-itens">
+                        {cronogramas.map((item, index) =>
+                            <div key={index} className="item-cronograma">
+                                <h2>{item.titulo}</h2>
+                                <p>Materia: {item.materia}</p>
+                                <p>Inicio: {item.incio}</p>
+                                <p>Termino: {item.termino}</p>
+                                <p>Descricao: {item.descricao}</p>
+                            </div>
+                        )}
+                    </div>
+
                 </div>
             )}
 
         </div>
-    )
-}
+    );
+};
