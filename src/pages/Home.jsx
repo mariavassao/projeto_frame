@@ -9,9 +9,9 @@ export function Home(){
     const [showForm, setShowForm] = useState(false);
 
     // cada input é controlado pelo valor do estado;
-    const [titulo, setTtitulo] = useState(""); 
+    const [titulo, setTitulo] = useState(""); 
     const [materia, setMateria] = useState("");
-    const [incio, setInicio] = useState("");
+    const [inicio, setInicio] = useState("");
     const [termino, setTermino] = useState("");
     const [descricao, setDescricao] = useState ("");
 
@@ -22,7 +22,7 @@ export function Home(){
     //funcao para salvar o formulario;
     const salvarFormulario = () => {
         // vamos criar o objeto para hospedar os vaores atuais dos inputs;
-        const novoItem = {titulo, materia, incio, termino, descricao};
+        const novoItem = {titulo, materia, inicio, termino, descricao};
 
         //agora vamos dividir para entender => set usado para utilizar o hook useState => [...] é um operador spread, ele copia os itens antigos e adiciona o novo;
 
@@ -54,7 +54,7 @@ export function Home(){
                     {/*value={titulo } mostra o valor atual do estado, onChage atualiza o estado quando o usuario digita;*/}
                     <input 
                         value={titulo}
-                        onChange={e=> setTtitulo(e.target.value)}
+                        onChange={e=> setTitulo(e.target.value)}
                         placeholder="Titulo"
                     />
 
@@ -66,7 +66,7 @@ export function Home(){
 
                     <input 
                         type="date"
-                        value={incio}
+                        value={inicio}
                         onChange={e=> setInicio(e.target.value)}
                         placeholder="Inicio"
                     />
@@ -78,11 +78,13 @@ export function Home(){
                         placeholder="TErmino"
                     />
 
-                    <textarea>
+                    <textarea
                         value={descricao}
                         onChange={e=> setDescricao(e.target.value)}
                         placeholder="Descricao"
-                    </textarea>
+                    ></textarea>
+
+                    <button onClick={salvarFormulario}>Salvar</button>
 
                     {/*container q vai exibir os itens do cronograma, a seguir vai percorrer o array e renderizar cada item*/}
                     <div className="container-itens">
